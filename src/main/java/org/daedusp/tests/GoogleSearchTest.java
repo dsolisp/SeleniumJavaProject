@@ -7,8 +7,13 @@ import org.testng.annotations.Test;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class GoogleSearchTest extends BaseTest {
+    // Logger for the class
+    private static final Logger logger = LoggerFactory.getLogger(GoogleSearchResultTest.class);
+
 
 
     @Test
@@ -45,7 +50,8 @@ public class GoogleSearchTest extends BaseTest {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            // Log the exception instead of printing the stack trace
+            logger.error("Error retrieving data from the database", e);
         }
         return trackName;
     }

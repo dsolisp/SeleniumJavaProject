@@ -1,1 +1,3 @@
-target/
+target/*
+target/classes/org/daedusp/pages/BasePage.class
+target/classes/org/daedusp/tests/GoogleSearchTest.class
